@@ -43,8 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Account.cs" />
+    <Compile Include="Domain\IAddNewAccount.cs" />
+    <Compile Include="Domain\Jornal.cs" />
+    <Compile Include="Domain\Menus.cs" />
+    <Compile Include="Domain\Costumer.cs" />
+    <Compile Include="Domain\Pet.cs" />
+    <Compile Include="Domain\Receptionist.cs" />
+    <Compile Include="Domain\SystemAdministrator.cs" />
+    <Compile Include="Domain\Veterinarian.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ConsoleView.cs" />
+    <Compile Include="View\LoginView.cs" />
+    <Compile Include="View\NewCostumerMenu.cs" />
+    <Compile Include="View\ReceptionistMainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
