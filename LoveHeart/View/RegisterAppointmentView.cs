@@ -8,10 +8,10 @@ namespace LoveHeart.View
 {
     class RegisterAppointmentView : ConsoleView
     {
+        bool notSufficientInformation = true;
+
         public override string Display()
         {
-            bool notSufficientInformation = true;
-
             do
             {
                 base.Display();

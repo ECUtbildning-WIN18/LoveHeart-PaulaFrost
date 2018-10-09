@@ -29,17 +29,15 @@ namespace LoveHeart.View
                 string dateOfBirth = Console.ReadLine();
 
                 Console.WriteLine("Is this correct? (Y)es (N)o");
-                var consoleKeyInfo = Console.ReadKey(true);
+                var consoleKeyInfo = Console.ReadKey();
 
                 if (consoleKeyInfo.Key == ConsoleKey.Y)
-                {
-                    var registerAppointmentView = new RegisterNewPetView();
-                    registerAppointmentView.Display();
-                    
+                {  
+                    notSufficientInformation = false;
                 }
                 else if (consoleKeyInfo.Key == ConsoleKey.N)
                 {
-                    notSufficientInformation = false;
+                    
                 }
                 else
                 {

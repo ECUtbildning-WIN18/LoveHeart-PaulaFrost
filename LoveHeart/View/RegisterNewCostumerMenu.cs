@@ -10,7 +10,7 @@ namespace LoveHeart.View
     {
         public override string Display()
         {
-            bool notSufficientInformation = true;
+            bool notSufficientInformation = false;
 
             do
             {
@@ -33,8 +33,6 @@ namespace LoveHeart.View
 
                 if (consoleKeyInfo.Key == ConsoleKey.Y)
                 {
-                    var registerNewPetView = new RegisterNewPetView();
-                    registerNewPetView.Display();
                     notSufficientInformation = false;
                 }
                 else if (consoleKeyInfo.Key == ConsoleKey.N)
