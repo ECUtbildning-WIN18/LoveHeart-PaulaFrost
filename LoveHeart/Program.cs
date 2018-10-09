@@ -16,6 +16,8 @@ namespace LoveHeart
             var receptionistMainView = new ReceptionistMainMenu();
             var registerNewCostumer = new RegisterNewCostumerMenu();
             var searchCostumerView = new SearchCostumerView();
+            var registerNewPetView = new RegisterNewPetView();
+            var registerAppointmentView = new RegisterNewPetView();
 
             loginView.Display();
 
