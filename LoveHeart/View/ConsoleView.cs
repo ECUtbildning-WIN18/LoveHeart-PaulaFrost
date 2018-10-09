@@ -8,9 +8,11 @@ namespace LoveHeart.View
 {
     class ConsoleView
     {
-        public virtual void Display()
+        public virtual string Display()
         {
             Console.Clear();
+
+            return "";
         }
     }
 }

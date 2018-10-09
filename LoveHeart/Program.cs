@@ -1,4 +1,5 @@
 ﻿using LoveHeart.Domain;
+using LoveHeart.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,30 @@ namespace LoveHeart
     {
         static void Main(string[] args)
         {
-            
+            var loginView = new LoginView();
+            var receptionistMainView = new ReceptionistMainMenu();
+            var registerNewCostumer = new RegisterNewCostumerMenu();
+            var searchCostumerView = new SearchCostumerView();
 
-            //foreach(IAddNewAccount user in users)
-            //{
-            //    user.NewUser();
-            //}
+            loginView.Display();
 
-            Menus.LoginMenu();
+            var result = receptionistMainView.Display();
+
+            if (result == "1")
+            {
+                registerNewCostumer.Display();
+            }
+            else if (result == "2")
+            {
+                searchCostumerView.Display();
+            }
+            else if (result == "3")
+            {
+                Environment.Exit(0);
+            }
+
             Console.WriteLine("Wazzup my Nagas!");
         }
     }
-}
+} 
+

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LoveHeart.View
@@ -10,33 +11,53 @@ namespace LoveHeart.View
     {
         public static int xCoord, yCoord, y;
 
-        public override void Display()
+        public override string Display()
         {
-            base.Display();
+            bool loginSucceded = false;
 
-            Console.WriteLine("Please log in\n\t");
-            Console.WriteLine("Username:");
-            Console.WriteLine("Password:\n\t");
-            WriteAt(" ", 9, 2);
-            string username = Console.ReadLine();
-            WriteAt(" ", 9, 3);
-            string password = Console.ReadLine();
-
-            Console.WriteLine(" ");
-            Console.WriteLine("Is this correct? (Y)es (N)o");
-            var keyInfo = Console.ReadKey();
-
-            if (keyInfo.Key == ConsoleKey.Y)
+            do
             {
-                if (username == "john" && password == "secret")
+                base.Display();
+
+                Console.WriteLine("Please log in\n\t");
+                Console.WriteLine("Username:");
+                Console.WriteLine("Password:\n\t");
+                WriteAt(" ", 9, 2);
+                string username = Console.ReadLine();
+                WriteAt(" ", 9, 3);
+                string password = Console.ReadLine();
+
+                Console.WriteLine("Is this correct? (Y)es (N)o");
+                var keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.Key == ConsoleKey.Y)
+                {
+                    if (username == "john" && password == "secret")
+                    {
+                        loginSucceded = true;
+                    }
+                    else if (username == "" && password == "")
+                    {
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nWrong! Try again");
+                        Thread.Sleep(2000);
+                    }
+                }
+                else if(keyInfo.Key == ConsoleKey.N)
                 {
 
                 }
                 else
                 {
-                    Console.WriteLine("Wrong! Try again");
+                    Console.WriteLine("Invalid selection");
                 }
-            }
+            } while (!loginSucceded);
+            Console.WriteLine("\nLogin Succeded!");
+            Console.ReadKey();
+            return "";
         }
 
         static void WriteAt(string s, int x, int y)
